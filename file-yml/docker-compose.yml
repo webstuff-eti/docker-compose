@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  database:
+    image: mysql:8.2.0
+    container_name: mysql8_docker
+    command: mysqld --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    restart: always
+    environment:
+      MYSQL_USER: 'tiagotibaes'
+      MYSQL_PASSWORD: 'password'      
+      MYSQL_ROOT_PASSWORD: 'root'
+    ports:
+      - '3305:3306'
+    volumes:
+      - 'C:/blog-tecnologia/tiagotibaes/com/mysql-data:/var/lib/mysql'
